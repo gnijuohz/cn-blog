@@ -1,0 +1,653 @@
+<!doctype html>
+
+
+
+
+<html class="theme-next mist" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/cn-blog/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+<link href="/cn-blog/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/cn-blog/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="leetcoder, leetcode" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/cn-blog/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="git很神奇">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git笔记">
+<meta property="og:url" content="http://yoursite.com/cn-blog/2017/06/21/git-notes/index.html">
+<meta property="og:site_name">
+<meta property="og:description" content="git很神奇">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-24T06:08:39.532Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git笔记">
+<meta name="twitter:description" content="git很神奇">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/cn-blog/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: false,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/cn-blog/2017/06/21/git-notes/"/>
+
+
+
+
+
+  
+  <title> Git笔记 |  </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/cn-blog/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title"></span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/cn-blog/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/cn-blog/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/cn-blog/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-projects">
+          <a href="/cn-blog/projects" rel="section">
+            
+            Projects
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-chinese">
+          <a href="/cn-blog/cn-blog" rel="section">
+            
+            中文
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/cn-blog/cn-blog/2017/06/21/git-notes/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Jing Zhou">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/cn-blog/images/avatar.jpg">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Git笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-21T00:00:00-07:00">
+                2017-06-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+              <div class="post-description">
+                  git很神奇
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="shortcut"><a href="#shortcut" class="headerlink" title="shortcut"></a>shortcut</h2><p><code>oh-my-zsh</code>提供一些很有用的<code>alias</code>，例如<code>gd -&gt; git diff</code>, <code>gco -&gt; git checkout</code>等等.</p>
+<h2 id="用git-pull-–rebase"><a href="#用git-pull-–rebase" class="headerlink" title="用git pull –rebase"></a>用git pull –rebase</h2><p>我一般不用<code>git pull</code>，只用<code>git pull --rebase</code>，因为前者会产生一个多余的merge信息。</p>
+<h2 id="设置upstream"><a href="#设置upstream" class="headerlink" title="设置upstream"></a>设置upstream</h2><p>所谓的<code>upstream</code>就是一个有最新代码的地方，你需要时不时的同步下。绝大多数情况下是不会直接向<code>upstream</code> push代码的。</p>
+<p>这个时候可以设置一个upstream的remote，但不推荐建立一个本地的branch进行tracking，因为毕竟不会改动upstream的代码。要与upstream同步的时候可以用</p>
+<p><code>git rebase upstream/master</code></p>
+<p>不确定的时候最好用下<code>git branch -vv</code>。只要你没改变push.default值，应该就不会有问题。</p>
+<h2 id="detached-HEAD"><a href="#detached-HEAD" class="headerlink" title="detached HEAD"></a>detached HEAD</h2><p>当你check out过去的某个commit的时候，你会进入一个detached HEAD的状态。如果你只是查看代码的话，用</p>
+<p><code>git checkout &lt;branch-name&gt;</code>就可以直接回到HEAD。</p>
+<p>如果想做什么改动的话可以新建一个branch然后commit改变。</p>
+<h2 id="rebase还是merge"><a href="#rebase还是merge" class="headerlink" title="rebase还是merge"></a>rebase还是merge</h2><p>如果改变比较大，用merge，如果改变比较小rebase。rebase的好处在于能够保留commit信息。</p>
+<h2 id="历史"><a href="#历史" class="headerlink" title="历史"></a>历史</h2><p>很多时候想知道某几行是谁改变的，这个时候可以用<code>git blame -L150,+11 &lt;filename&gt;</code></p>
+<p>如果想知道这几行代码的改变历史是什么样的，可以使用<code>git log -L 155,155:&lt;filename&gt;</code></p>
+<p>找到相应的commit之后，用<code>git show &lt;commit hash&gt;</code>显示该commit具体的信息．</p>
+<h2 id="diff-so-fancy"><a href="#diff-so-fancy" class="headerlink" title="diff-so-fancy"></a>diff-so-fancy</h2><p><code>diff-so-fancy</code>用inline的方式显示diff, 改变一目了然．</p>
+<h2 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore"></a>.gitignore</h2><p>有的时候commit之后才加.gitignore的，可以这样删除已经被track的文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached .</span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;Removing all files in .gitignore&quot;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>The purpose of gitignore files is to ensure that certain files not tracked by Git remain untracked.<br>To stop tracking a file that is currently tracked, use git rm –cached.</p>
+</blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/cn-blog/2017/05/26/commandline/" rel="next" title="Linux下的pipe, dev/null, vim -, 以及xargs">
+                <i class="fa fa-chevron-left"></i> Linux下的pipe, dev/null, vim -, 以及xargs
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/cn-blog/2017/11/11/web-scrape/" rel="prev" title="Selenium使用headless Chrome">
+                Selenium使用headless Chrome <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/cn-blog/images/avatar.jpg"
+               alt="Jing Zhou" />
+          <p class="site-author-name" itemprop="name">Jing Zhou</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/cn-blog/archives">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/cn-blog/tags">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/gnijuohz" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#shortcut"><span class="nav-number">1.</span> <span class="nav-text">shortcut</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用git-pull-–rebase"><span class="nav-number">2.</span> <span class="nav-text">用git pull –rebase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置upstream"><span class="nav-number">3.</span> <span class="nav-text">设置upstream</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#detached-HEAD"><span class="nav-number">4.</span> <span class="nav-text">detached HEAD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rebase还是merge"><span class="nav-number">5.</span> <span class="nav-text">rebase还是merge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#历史"><span class="nav-number">6.</span> <span class="nav-text">历史</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#diff-so-fancy"><span class="nav-number">7.</span> <span class="nav-text">diff-so-fancy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gitignore"><span class="nav-number">8.</span> <span class="nav-text">.gitignore</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jing Zhou</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/cn-blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/cn-blog/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/cn-blog/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/cn-blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/cn-blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/cn-blog/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/cn-blog/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/cn-blog/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/cn-blog/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/cn-blog/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/cn-blog/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+
+</body>
+</html>
